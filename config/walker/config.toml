@@ -1,120 +1,260 @@
+app_launch_prefix = ""
+terminal_title_flag = ""
+locale = ""
+close_when_open = false
+theme = "void"
+monitor = ""
+hotreload_theme = true
+as_window = false
+timeout = 0
+disable_click_to_close = false
 force_keyboard_focus = true
-theme = 'catppuccin'
 
-[activation_mode]
-labels = 'jkl;asdf'
-use_alt = true
+[keys]
+accept_typeahead = ["tab"]
+trigger_labels = "lalt"
+next = ["down"]
+prev = ["up"]
+close = ["esc"]
+remove_from_history = ["shift backspace"]
+resume_query = ["ctrl r"]
+toggle_exact_search = ["ctrl m"]
 
-[builtins]
-[builtins.applications]
-actions = true
-context_aware = true
-name = 'applications'
-placeholder = 'Applications'
-prioritize_new = true
-refresh = true
-show_icon_when_single = true
-show_sub_when_single = true
-weight = 5.0
+[keys.activation_modifiers]
+keep_open = "shift"
+alternate = "alt"
 
-[builtins.calc]
-icon = 'accessories-calculator'
-min_chars = 4.0
-name = 'calc'
-placeholder = 'Calculator'
-weight = 5.0
+[keys.ai]
+clear_session = ["ctrl x"]
+copy_last_response = ["ctrl c"]
+resume_session = ["ctrl r"]
+run_last_response = ["ctrl e"]
 
-[builtins.clipboard]
-image_height = 300.0
-max_entries = 10.0
-name = 'clipboard'
-placeholder = 'Clipboard'
-switcher_only = true
-weight = 5.0
-
-[builtins.commands]
-icon = 'utilities-terminal'
-name = 'commands'
-placeholder = 'Commands'
-switcher_only = true
-weight = 5.0
-
-[builtins.custom_commands]
-icon = 'utilities-terminal'
-name = 'custom_commands'
-placeholder = 'Custom Commands'
-weight = 5.0
-
-[builtins.dmenu]
-name = 'dmenu'
-placeholder = 'Dmenu'
-switcher_only = true
-weight = 5.0
-
-[builtins.emojis]
-history = true
-name = 'emojis'
-placeholder = 'Emojis'
-switcher_only = true
-typeahead = true
-weight = 5.0
-
-[builtins.finder]
-concurrency = 8.0
-icon = 'folder'
-ignore_gitignore = true
-name = 'finder'
-placeholder = 'Finder'
-refresh = true
-switcher_only = true
-weight = 5.0
-
-[builtins.runner]
-generic_entry = false
-history = true
-icon = 'utilities-terminal'
-name = 'runner'
-placeholder = 'Runner'
-refresh = true
-typeahead = true
-weight = 5.0
-prefix = '.'
-
-[builtins.ssh]
-history = true
-icon = 'preferences-system-network'
-name = 'ssh'
-placeholder = 'SSH'
-refresh = true
-switcher_only = true
-weight = 5.0
-
-[builtins.switcher]
-name = 'switcher'
-placeholder = 'Switcher'
-prefix = '/'
-weight = 5.0
-
-[builtins.websearch]
-engines = ['google']
-icon = 'applications-internet'
-name = 'websearch'
-placeholder = 'Websearch'
-weight = 5.0
-
-[builtins.windows]
-icon = 'view-restore'
-name = 'windows'
-placeholder = 'Windows'
-weight = 5.0
+[events]
+on_activate = ""
+on_selection = ""
+on_exit = ""
+on_launch = ""
+on_query_change = ""
 
 [list]
-max_entries = 50.0
+dynamic_sub = true
+keyboard_scroll_style = "emacs"
+max_entries = 50
 show_initial_entries = true
 single_click = true
+visibility_threshold = 20
+placeholder = "No Results"
 
 [search]
-delay = 0.0
-force_keyboard_focus = true
+argument_delimiter = "#"
+placeholder = "Search..."
+delay = 0
+resume_last_query = false
+
+[activation_mode]
+labels = "12345asd"
+
+[builtins.hyprland_keybinds]
+show_sub_when_single = true
+path = "~/.config/hypr/hyprland.conf"
+weight = 5
+name = "hyprland_keybinds"
+placeholder = "Hyprland Keybinds"
+switcher_only = true
+
+[builtins.applications]
+weight = 5
+name = "applications"
+placeholder = "Applications"
+prioritize_new = true
+hide_actions_with_empty_query = true
+context_aware = true
+refresh = true
+show_sub_when_single = true
+show_icon_when_single = true
+show_generic = true
 history = true
-placeholder = 'Search...'
+icon = "applications-other"
+
+[builtins.applications.actions]
+enabled = true
+hide_category = false
+hide_without_query = true
+
+[builtins.bookmarks]
+weight = 5
+placeholder = "Bookmarks"
+name = "bookmarks"
+icon = "bookmark"
+switcher_only = true
+
+[[builtins.bookmarks.entries]]
+label = "Walker"
+url = "https://github.com/abenz1267/walker"
+keywords = ["walker", "github"]
+
+[builtins.xdph_picker]
+hidden = true
+weight = 5
+placeholder = "Screen/Window Picker"
+show_sub_when_single = true
+name = "xdphpicker"
+switcher_only = true
+prefix = ";"
+
+[builtins.ai]
+weight = 5
+placeholder = "AI"
+name = "ai"
+icon = "help-browser"
+switcher_only = true
+show_sub_when_single = true
+
+[[builtins.ai.anthropic.prompts]]
+model = "claude-3-7-sonnet-20250219"
+temperature = 1
+max_tokens = 1_000
+label = "General Assistant"
+prompt = "You are a helpful general assistant. Keep your answers short and precise."
+
+[builtins.calc]
+require_number = true
+weight = 5
+name = "calc"
+icon = "accessories-calculator"
+placeholder = "Calculator"
+min_chars = 4
+
+[builtins.windows]
+weight = 5
+icon = "view-restore"
+name = "windows"
+placeholder = "Windows"
+show_icon_when_single = true
+
+[builtins.clipboard]
+always_put_new_on_top = true
+exec = "wl-copy"
+weight = 5
+name = "clipboard"
+avoid_line_breaks = true
+placeholder = "Clipboard"
+image_height = 300
+max_entries = 10
+switcher_only = true
+
+[builtins.commands]
+weight = 5
+icon = "utilities-terminal"
+switcher_only = true
+name = "commands"
+placeholder = "Commands"
+
+[builtins.custom_commands]
+weight = 5
+icon = "utilities-terminal"
+name = "custom_commands"
+placeholder = "Custom Commands"
+
+[builtins.emojis]
+exec = "wl-copy"
+weight = 5
+name = "emojis"
+placeholder = "Emojis"
+switcher_only = true
+history = true
+typeahead = true
+show_unqualified = false
+
+
+[builtins.symbols]
+after_copy = ""
+weight = 5
+name = "symbols"
+placeholder = "Symbols"
+switcher_only = true
+history = true
+typeahead = true
+
+[builtins.finder]
+use_fd = false
+fd_flags = "--ignore-vcs --type file --type directory"
+cmd_alt = "xdg-open $(dirname ~/%RESULT%)"
+weight = 5
+icon = "file"
+name = "finder"
+placeholder = "Finder"
+switcher_only = true
+ignore_gitignore = true
+refresh = true
+concurrency = 8
+show_icon_when_single = true
+preview_images = true
+
+[builtins.runner]
+eager_loading = true
+weight = 5
+icon = "utilities-terminal"
+name = "runner"
+placeholder = "Runner"
+typeahead = true
+history = true
+generic_entry = false
+refresh = true
+use_fd = false
+
+[builtins.ssh]
+weight = 5
+icon = "preferences-system-network"
+name = "ssh"
+placeholder = "SSH"
+switcher_only = true
+history = true
+refresh = true
+
+[builtins.switcher]
+weight = 5
+name = "switcher"
+placeholder = "Switcher"
+prefix = "/"
+
+[builtins.websearch]
+keep_selection = true
+weight = 5
+icon = "applications-internet"
+name = "websearch"
+placeholder = "Websearch"
+prefix = "'"
+
+[[builtins.websearch.entries]]
+name = "Google"
+url = "https://www.google.com/search?q=%TERM%"
+
+[[builtins.websearch.entries]]
+name = "DuckDuckGo"
+url = "https://duckduckgo.com/?q=%TERM%"
+switcher_only = true
+
+[[builtins.websearch.entries]]
+name = "Ecosia"
+url = "https://www.ecosia.org/search?q=%TERM%"
+switcher_only = true
+
+[builtins.dmenu]
+hidden = true
+weight = 5
+name = "dmenu"
+placeholder = "Dmenu"
+switcher_only = true
+show_icon_when_single = true
+
+[builtins.translation]
+delay = 1000
+weight = 5
+name = "translation"
+icon = "accessories-dictionary"
+placeholder = "Translation"
+switcher_only = true
+provider = "googlefree"
+prefix = "-"

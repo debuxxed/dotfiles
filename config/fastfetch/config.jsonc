@@ -1,95 +1,147 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "/home/offeex/dotfiles/wallpapers/negr/sticker.webp",
-    "type": "kitty",
-    "height": 13
+    "type": "file",
+    "source": "~/.config/fastfetch/logo.txt",
   },
   "display": {
-    "separator": "➜ "
+    "separator": " - ",
+
+    "color": {
+      "keys": "cyan",
+      "title": "green",
+      "separator": "black",
+      "output": "blue",
+    },
+    "constants": [
+      "│\u001b[46C│\u001b[47D",
+      "──────────────────────────────────────────────",
+      "\u001b[1Do",
+      "\u001b[46Co\u001b[47D",
+    ],
   },
   "modules": [
     {
-      "type": "custom",
-      "format": "┌────────────────────────────────────────────┐"
-    },
-    // Hardware
-    // {
-    //   "type": "custom",
-    //   "format": "Hardware",
-    //   "outputColor": "green"
-    // },
-    {
       "type": "title",
-      "format": "╎  {6}{7}{8}"
-    },
-    {
-      "type": "uptime",
-      "key": " ",
-      "format": "╎  {1} days {2} hours {3} mins"
+      "format": "{#keys}╭{$2}╮\u001b[44D {#title}{user-name}@{host-name} {#keys}\u001b[9Co\u001b[6Co",
     },
     {
       "type": "custom",
-      "format": "🟇───────────────🟃  𝓗𝓪𝓻𝓭𝔀𝓪𝓻𝓮  🟃───────────────🟇"
+      "format": "{#keys}{$1}",
     },
+
     {
       "type": "cpu",
-      "key": "└ 󰻠 CPU     ",
-      "format": "{1}"
+      "key": "{$1} PROCESSING_UNIT",
+      "format": "{1}",
     },
     {
       "type": "gpu",
-      "key": "└ 󰍛 GPU     ",
+      "key": "{$1} VISUAL_RENDERER",
       "format": "{2}",
-      "hideType": "integrated"
+      "hideType": "integrated",
+    },
+    {
+      "type": "memory",
+      "key": "{$1}{$3} BUFFER_CAPACITY",
+      "format": "{2}",
+    },
+    {
+      "type": "swap",
+      "key": "{$1} SWAP_CAPACITY  ",
+      "format": "{2}",
     },
     {
       "type": "physicaldisk",
-      "key": "└ 🖴 Disk    ",
-      "format": "{2}"
+      "key": "{$1} DATA_ARCHIVE   ",
+      "format": "{2}",
     },
     {
-      "type": "host",
-      "key": "└ 󰌢 Host    ",
-      "format": "{1}"
+      "type": "display",
+      "key": "{$1} PROJECTOR      ",
+      "format": "{1}x{2}@{3}",
     },
-    // Visual
-    // {
-    //   "type": "custom",
-    //   "format": "Visuals",
-    //   "outputColor": "green"
-    // },
+
     {
       "type": "custom",
-      "format": "🟇───────────────🟃  𝓢𝔂𝓼𝓽𝓮𝓶   🟃────────────────🟇"
+      "format": "{#keys}{$1}",
     },
+
     {
-      "type": "os",
-      "format": "{3}",
-      "key": "└  OS      "
+      "type": "uptime",
+      "key": "{$1}{$4} SYSTEM_UPTIME  ",
+      "format": "{days}d {hours}h {minutes}m",
     },
+
     {
-      "type": "wm",
-      "key": "└ 🗔 WM      ",
-      "format": "{1}"
+      "type": "custom",
+      "format": "{#keys}{$1}",
+    },
+
+    {
+      "type": "kernel",
+      "key": "{$1}{$3} KERNEL_VERSION ",
+      "format": "{2}",
     },
     {
       "type": "shell",
-      "key": "└  Shell   ",
-      "format": "{1}"
+      "key": "{$1}{$4} SHELL_INTERFACE",
+      "format": "{pretty-name} {version}",
+    },
+    {
+      "type": "wm",
+      "key": "{$1} WINDOW_MANAGER ",
+      "format": "{pretty-name} {version}",
     },
     {
       "type": "terminal",
-      "key": "└  Term    ",
-      "format": "{5}"
+      "key": "{$1} TERMINAL_APP   ",
+      "format": "{pretty-name} {version}",
+    },
+
+    {
+      "type": "custom",
+      "format": "{#keys}{$1}",
+    },
+
+    {
+      "type": "theme",
+      "key": "{$1} VISUAL_SCHEME ",
+      "format": "{theme1}{theme2}",
+    },
+    {
+      "type": "icons",
+      "key": "{$1} SYMBOL_SET    ",
+      "format": "{icons1}{icons2}",
+    },
+    {
+      "type": "font",
+      "key": "{$1}{$3} DISPLAY_CODEC ",
+      "format": "{font2}",
+    },
+    {
+      "type": "cursor",
+      "key": "{$1}{$4} POINTER_RENDER",
+      "format": "{theme} {size}",
     },
     {
       "type": "terminalfont",
-      "key": "└ 🗛 Font    "
+      "key": "{$1} CONSOLE_RENDER",
+      "format": "{name} {size}pt",
+    },
+    {
+      "type": "colors",
+      "key": "{$1} COLOR_LAYOUT",
+      "symbol": "square",
+    },
+
+    {
+      "type": "custom",
+      "format": "{#keys}{$1}",
     },
     {
       "type": "custom",
-      "format": "└────────────────────────────────────────────┘"
-    }
-  ]
+      "format": "{#keys}╰{$2}╯\u001b[40Do\u001b[15C LAYER_07_PROTOCOL \u001b[2Co",
+    },
+  ],
 }

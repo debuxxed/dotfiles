@@ -1,0 +1,165 @@
+@define-color foreground rgba(255, 255, 255, 0.8);
+@define-color background hsla(0, 0%, 0%, 1);
+@define-color color1 #DA7890;
+@define-color color2 #C1B492;
+
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+    all: unset;
+    font-family: "Pixel Operator", monospace;
+}
+
+#cfgerr {
+    background: rgba(255, 0, 0, 0.4);
+    margin-top: 20px;
+    padding: 8px;
+    font-size: 1.2em;
+}
+
+#window {
+    color: @foreground;
+}
+
+#box {
+    border-radius: 2px;
+    background: @background;
+    padding: 32px;
+    border: 1px solid @color1;
+    box-shadow:
+        0 0px 75px alpha(@color1, 0.075),
+        0 0px 40px alpha(@color1, 0.125),
+        0 0px 15px alpha(@color1, 0.25);
+}
+
+#search {
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.1),
+        0 1px 2px rgba(0, 0, 0, 0.22);
+    background: alpha(@color2, 0.1);
+    margin-bottom: 8px;
+    padding: 6px 0 10px 0;
+}
+
+#prompt {
+    margin-left: 4px;
+    margin-right: 12px;
+    color: @foreground;
+    opacity: 0.2;
+}
+
+#clear {
+    color: @foreground;
+    opacity: 0.8;
+}
+
+#password,
+#input,
+#typeahead {
+    border-radius: 2px;
+}
+
+#input {
+    background: none;
+    font-size: 1.5em;
+}
+
+#password {
+}
+
+#spinner {
+    padding: 8px;
+}
+
+#typeahead {
+    color: @foreground;
+    opacity: 0.8;
+}
+
+#input placeholder {
+    opacity: 0.5;
+}
+
+#list {
+}
+
+child {
+    padding: 8px;
+    font-size: 1.5em;
+}
+
+child:selected,
+child:hover {
+    background: alpha(@color2, 0.1);
+    color: @color2;
+}
+
+#item {
+}
+
+#icon {
+    margin-right: 8px;
+}
+
+#text {
+}
+
+#label {
+    font-weight: 500;
+}
+
+#sub {
+    opacity: 0.5;
+    font-size: 0.8em;
+}
+
+#activationlabel {
+}
+
+#bar {
+}
+
+.barentry {
+}
+
+.activation #activationlabel {
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+    opacity: 0.5;
+}
+
+.aiItem {
+    padding: 10px;
+    border-radius: 2px;
+    color: @foreground;
+    background: @background;
+}
+
+.aiItem.user {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.aiItem.assistant {
+    background: lighter(@background);
+}

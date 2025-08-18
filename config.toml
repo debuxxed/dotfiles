@@ -1,49 +1,15 @@
 [config]
-backup = true
-banner = true
 create = true
-dotpath = ""
-keepdot = false
-link_dotfile_default = "nolink"
-link_on_import = "nolink"
-longkey = false
-
-[dotfiles.d_hypr]
-src = "config/hypr"
-dst = "~/.config/hypr"
-
-[dotfiles.d_alacritty]
-src = "config/alacritty"
-dst = "~/.config/alacritty"
+dotpath = "."
 
 [dotfiles.d_btop]
 src = "config/btop"
 dst = "~/.config/btop"
+chmod = "700"
 
 [dotfiles.d_fish]
 src = "config/fish"
 dst = "~/.config/fish"
-
-[dotfiles.d_i3]
-src = "config/i3"
-dst = "~/.config/i3"
-
-[dotfiles."f_kvantum.kvconfig"]
-src = "config/Kvantum/kvantum.kvconfig"
-dst = "~/.config/Kvantum/kvantum.kvconfig"
-
-[dotfiles.d_walker]
-src = "config/walker"
-dst = "~/.config/walker"
-
-[dotfiles.d_waybar]
-src = "config/waybar"
-dst = "~/.config/waybar"
-
-[dotfiles.d_spicetify]
-src = "config/spicetify"
-dst = "~/.config/spicetify"
-chmod = "700"
 
 [dotfiles.d_yazi]
 src = "config/yazi"
@@ -66,34 +32,62 @@ dst = "~/.config/micro"
 src = "config/vesktop"
 dst = "~/.config/vesktop"
 chmod = "700"
-instignore = ["*", "!settings/", "!themes/"]
-upignore = ["*", "!settings/", "!themes/"]
-cmpignore = ["*", "!settings/", "!themes/"]
+instignore = [
+    "*",
+    "!settings/",
+    "!themes/",
+]
+upignore = [
+    "*",
+    "!settings/",
+    "!themes/",
+]
+cmpignore = [
+    "*",
+    "!settings/",
+    "!themes/",
+]
 
-[dotfiles.d_wezterm]
-src = "config/wezterm"
-dst = "~/.config/wezterm"
+[dotfiles.d_walker]
+src = "config/walker"
+dst = "~/.config/walker"
 
-[dotfiles."f_brave-flags.conf"]
-src = "config/brave-flags.conf"
-dst = "~/.config/brave-flags.conf"
+[dotfiles.d_quickshell]
+src = "config/quickshell"
+dst = "~/.config/quickshell"
 
-[profiles.offeex-pc]
+[dotfiles.d_xdg-desktop-portal-termfilechooser]
+src = "config/xdg-desktop-portal-termfilechooser"
+dst = "~/.config/xdg-desktop-portal-termfilechooser"
+
+[dotfiles.d_xdg-desktop-portal]
+src = "config/xdg-desktop-portal"
+dst = "~/.config/xdg-desktop-portal"
+
+[dotfiles.d_waypaper]
+src = "config/waypaper"
+dst = "~/.config/waypaper"
+
+[dotfiles.d_void]
+src = "Pictures/wallpapers/void"
+dst = "~/Pictures/wallpapers/void"
+
+[dotfiles.d_hypr]
+src = "config/hypr"
+dst = "~/.config/hypr"
+
+[profiles.offeex]
 dotfiles = [
-    "d_hypr",
-    "d_alacritty",
+    "d_fastfetch",
+    "d_micro",
     "d_btop",
     "d_fish",
-    "d_i3",
-    "f_kvantum.kvconfig",
-    "d_walker",
-    "d_waybar",
-    "d_spicetify",
     "d_yazi",
-    "d_fastfetch",
-    "d_flavours",
-    "d_micro",
-    "d_vesktop",
-    "d_wezterm",
-    "f_brave-flags.conf",
+    "d_walker",
+    "d_quickshell",
+    "d_xdg-desktop-portal-termfilechooser",
+    "d_xdg-desktop-portal",
+    "d_waypaper",
+    "d_void",
+    "d_hypr",
 ]
